@@ -20,7 +20,8 @@ RUN apk add --no-cache \
     nodejs \
     openssh \
     pwgen \
-    unzip
+    unzip \
+    zip
 
 RUN wget --no-check-certificate https://github.com/kernix/wkhtmltopdf-docker-alpine/raw/master/wkhtmltopdf -P /usr/bin/
 RUN chmod a+x /usr/bin/wkhtmltopdf
