@@ -2,7 +2,7 @@
 
 # Remind:
 # docker build -t "sd/drone-ruby:2.3.3" .
-# docker tag sd/drone-ruby:2.3.3 sdilshod/drone-ruby:2.3.3
+# docker tag sdilshod/drone-ruby:2.3.3
 
 FROM ruby:2.3.3-alpine
 MAINTAINER Tomas Jukin <tomas.jukin@juicymo.cz>
