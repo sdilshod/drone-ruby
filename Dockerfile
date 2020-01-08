@@ -1,7 +1,8 @@
 # see https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/ for Dockerfile best practices
 
-# build me with:
-# docker build -t "juicymo/drone-ruby:2.3.3" .
+# Remind:
+# docker build -t "sd/drone-ruby:2.3.3" .
+# docker tag sd/drone-ruby:2.3.3 sdilshod/drone-ruby:2.3.3
 
 FROM ruby:2.3.3-alpine
 MAINTAINER Tomas Jukin <tomas.jukin@juicymo.cz>
@@ -25,9 +26,14 @@ RUN apk add --no-cache \
     openssh \
     pwgen \
     unzip \
-    zip
+    zip \
+    ca-certificates
 
-RUN wget --no-check-certificate https://github.com/kernix/wkhtmltopdf-docker-alpine/raw/master/wkhtmltopdf -P /usr/bin/ && wget ${ALPINE_GLIBC_URL}${GLIBC_PKG} ${ALPINE_GLIBC_URL}${GLIBC_BIN_PKG} && apk add --allow-untrusted ${GLIBC_PKG} ${GLIBC_BIN_PKG}
+RUN wget --no-check-certificate https://github.com/kernix/wkhtmltopdf-docker-alpine/raw/master/wkhtmltopdf -P /usr/bin/ \
+    && wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
+    && wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-2.30-r0.apk \
+    apk add glibc-2.30-r0.apk
+
 RUN chmod a+x /usr/bin/wkhtmltopdf
 
 ENV SHELL /bin/bash
