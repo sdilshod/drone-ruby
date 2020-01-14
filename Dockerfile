@@ -4,16 +4,12 @@
 # docker build -t "sd/drone-ruby:2.3.3" .
 # docker tag sdilshod/drone-ruby:2.3.3
 
-FROM ruby:2.3.3-alpine
+FROM ruby:2.6.5-alpine
 MAINTAINER Tomas Jukin <tomas.jukin@juicymo.cz>
 
 ENV BUILD_PACKAGES curl-dev build-base
 ENV RUBY_PACKAGES cairo-dev postgresql-dev tzdata wget postgresql-client
 ENV WKHTMLTOPDF_PACKAGES gtk+ glib ttf-freefont fontconfig dbus
-ENV \
-    ALPINE_GLIBC_URL="https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/" \
-    GLIBC_PKG="glibc-2.21-r2.apk" \
-    GLIBC_BIN_PKG="glibc-bin-2.21-r2.apk"
 
 RUN apk add --no-cache \
     $BUILD_PACKAGES \
