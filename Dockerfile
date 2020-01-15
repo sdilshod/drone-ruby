@@ -4,7 +4,7 @@
 # docker build -t "sd/drone-ruby:2.3.3" .
 # docker tag sdilshod/drone-ruby:2.3.3
 
-FROM ruby:2.6.5-alpine
+FROM ruby:2.5.7-alpine
 MAINTAINER Tomas Jukin <tomas.jukin@juicymo.cz>
 
 ENV BUILD_PACKAGES curl-dev build-base
