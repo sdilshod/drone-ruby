@@ -37,4 +37,4 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 
-RUN gem install bundler --no-document -v '< 2'
+RUN gem install bundler --no-document -v '2.1.4'
