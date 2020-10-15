@@ -23,7 +23,8 @@ RUN apk add --no-cache \
     pwgen \
     unzip \
     zip \
-    ca-certificates
+    ca-certificates \
+    redis
 
 RUN wget --no-check-certificate https://github.com/kernix/wkhtmltopdf-docker-alpine/raw/master/wkhtmltopdf -P /usr/bin/ \
     && wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
