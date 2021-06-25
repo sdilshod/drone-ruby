@@ -7,7 +7,7 @@ FROM ruby:2.7.3-alpine3.13
 MAINTAINER Tomas Jukin <tomas.jukin@juicymo.cz>
 
 ENV BUILD_PACKAGES curl-dev build-base bash cmake clang clang-dev make gcc g++ libc-dev linux-headers libxml2 libxml2-dev libxslt-dev
-ENV RUBY_PACKAGES cairo-dev postgresql-dev tzdata wget postgresql=10.5-r0
+ENV RUBY_PACKAGES cairo-dev postgresql-dev tzdata wget postgresql=10.12-r0
 ENV WKHTMLTOPDF_PACKAGES gtk+ glib ttf-freefont fontconfig dbus
 
 RUN apk add --no-cache \

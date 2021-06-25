@@ -1,0 +1,13 @@
+version: '2.4'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: os/Dockerfile
+      args:
+        RUBY_VERSION: '2.7.3'
+        BUNDLER_VERSION: '2.1.4'
+    image: parts-soft-autotest:1.0.0
+    tmpfs:
+      - /tmp
